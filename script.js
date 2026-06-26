@@ -956,41 +956,7 @@ function sendEmailViaMailto(data) {
         `Name: ${data.user_name}\nEmail: ${data.user_email}\n\nMessage:\n${data.message}`
     );
     
-    // Use a hidden anchor click instead of window.location.href
-    // This opens Outlook/mail client WITHOUT navigating away from the portfolio
-    const mailtoLink = document.createElement('a');
-    mailtoLink.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    mailtoLink.style.display = 'none';
-    document.body.appendChild(mailtoLink);
-    mailtoLink.click();
-    document.body.removeChild(mailtoLink);
-}
-
-// ============================================
-// DIRECT CONTACT ACTIONS (called from HTML onclick)
-// ============================================
-function sendEmailDirect() {
-    const emailElement = document.getElementById('b-email');
-    const email = emailElement ? emailElement.textContent.trim() : 'sivasankarvenkatesan5@gmail.com';
-    
-    const mailtoLink = document.createElement('a');
-    mailtoLink.href = `mailto:${email}`;
-    mailtoLink.style.display = 'none';
-    document.body.appendChild(mailtoLink);
-    mailtoLink.click();
-    document.body.removeChild(mailtoLink);
-}
-
-function makeCallDirect() {
-    const phoneElement = document.getElementById('b-phone');
-    const phone = phoneElement ? phoneElement.textContent.trim().replace(/\s/g, '') : '+919944028425';
-    
-    const telLink = document.createElement('a');
-    telLink.href = `tel:${phone}`;
-    telLink.style.display = 'none';
-    document.body.appendChild(telLink);
-    telLink.click();
-    document.body.removeChild(telLink);
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 }
 
 function showFormMessage(message, type, container) {
@@ -1452,8 +1418,18 @@ window.portfolioApp = {
     },
     
     // Contact functions
-    makeCall: function() { makeCallDirect(); },
-    sendEmail: function() { sendEmailDirect(); },
+    makeCall: function() {
+        const phoneElement = document.getElementById('b-phone');
+        if (phoneElement) {
+            window.location.href = `tel:${phoneElement.textContent.replace(/\s/g, '')}`;
+        }
+    },
+    sendEmail: function() {
+        const emailElement = document.getElementById('b-email');
+        if (emailElement) {
+            window.location.href = `mailto:${emailElement.textContent}`;
+        }
+    },
     
     // Version info
     version: '2.0.0',
