@@ -1,0 +1,43 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Secretly Create email-config.js
+        run: |
+          cat << EOF > email-config.js
+          const EMAIL_CONFIG = {
+            SERVICE_ID: '${{ secrets.EMAIL_SERVICE_ID }}',
+            TEMPLATE_ID: '${{ secrets.EMAIL_TEMPLATE_ID }}',
+            PUBLIC_KEY: '${{ secrets.EMAIL_PUBLIC_KEY }}',
+            enabled: true
+          };
+          
+          (function initEmailJS() {
+            if (typeof emailjs !== 'undefined') {
+              emailjs.init(EMAIL_CONFIG.PUBLIC_KEY);
+            }
+          })();
+          EOF
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
