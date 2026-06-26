@@ -4,58 +4,40 @@ on:
   push:
     branches: ["main"]
 
-# Required permissions for GitHub Pages deployment
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Only one deployment at a time
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Create email-config.js from secrets
+      - name: Secretly Create email-config.js
         run: |
-          cat << 'HEREDOC' > email-config.js
+          cat << EOF > email-config.js
           const EMAIL_CONFIG = {
-            SERVICE_ID: 'SERVICE_ID_PLACEHOLDER',
-            TEMPLATE_ID: 'TEMPLATE_ID_PLACEHOLDER',
-            PUBLIC_KEY: 'PUBLIC_KEY_PLACEHOLDER',
+            SERVICE_ID: '${{ secrets.EMAIL_SERVICE_ID }}',
+            TEMPLATE_ID: '${{ secrets.EMAIL_TEMPLATE_ID }}',
+            PUBLIC_KEY: '${{ secrets.EMAIL_PUBLIC_KEY }}',
             enabled: true
           };
-
+          
           (function initEmailJS() {
             if (typeof emailjs !== 'undefined') {
               emailjs.init(EMAIL_CONFIG.PUBLIC_KEY);
             }
           })();
-          HEREDOC
-
-          # Replace placeholders with actual secret values
-          sed -i "s/SERVICE_ID_PLACEHOLDER/${{ secrets.EMAIL_SERVICE_ID }}/g" email-config.js
-          sed -i "s/TEMPLATE_ID_PLACEHOLDER/${{ secrets.EMAIL_TEMPLATE_ID }}/g" email-config.js
-          sed -i "s/PUBLIC_KEY_PLACEHOLDER/${{ secrets.EMAIL_PUBLIC_KEY }}/g" email-config.js
+          EOF
 
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: '.'
+          path: '.' 
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
