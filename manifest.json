@@ -1,0 +1,26 @@
+{
+  "name": "Siva Sankar Portfolio",
+  "short_name": "Siva Portfolio",
+  "description": "Recent CS Graduate & AI Developer Portfolio - Seeking Entry-Level Opportunities",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#00d2ff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

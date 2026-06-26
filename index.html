@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.emailjs.com https://cdn.jsdelivr.net">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Siva Sankar Portfolio">
+<meta name="description" content="Siva Sankar V - Recent Computer Science Graduate & AI Developer portfolio. Seeking entry-level opportunities in AI and Web Development.">
+<meta name="keywords" content="Recent CS Graduate, AI Developer, Web Developer, Entry-Level, Fresher, Computer Science">
+<meta name="author" content="Siva Sankar V">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Siva Sankar V | Recent CS Graduate & AI Developer">
+<meta property="og:description" content="Recent Computer Science Graduate seeking entry-level opportunities in AI and Web Development.">
+<meta property="og:image" content="https://yourdomain.com/siva.jpg">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Siva Sankar V | Recent CS Graduate & AI Developer">
+<meta name="twitter:description" content="Recent CS Graduate ready to contribute to AI and Web Development projects">
+<link rel="manifest" href="/manifest.json">
+    <title>Siva Sankar V | Recent CS Graduate & AI Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="particles-container" id="particles-js"></div>
+    
+    <nav class="navbar">
+        <div class="nav-left">
+            <button class="like-btn" id="like-btn" aria-label="Like Portfolio">
+                <i class="far fa-heart"></i>
+                <span class="like-count" id="like-count">0</span>
+            </button>
+            
+            <div class="logo">
+                <span class="logo-text">Siva<span class="logo-highlight">Sankar</span></span>
+                <span class="nav-fresher-badge">Recent Graduate</span>
+            </div>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="nav-link" onclick="closeMenu()"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about" class="nav-link" onclick="closeMenu()"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#skills" class="nav-link" onclick="closeMenu()"><i class="fas fa-code"></i> Skills</a></li>
+            <li><a href="#projects" class="nav-link" onclick="closeMenu()"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="#resume" class="nav-link" onclick="closeMenu()"><i class="fas fa-file-alt"></i> Resume</a></li>
+            <li><a href="#contact" class="nav-link" onclick="closeMenu()"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        
+        <div class="nav-right">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <a href="#contact" class="btn-hire">
+                <i class="fas fa-paper-plane"></i> <span class="hire-text">Hire Me</span>
+            </a>
+
+            <div class="menu-icon" id="menu-icon">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h3 class="hero-subtitle">Hello, I'm</h3>
+            <h1 class="hero-title">
+                Siva <span class="gradient-text">Sankar V</span>
+                <span class="fresher-badge">Recent CS Graduate</span>
+            </h1>
+            <div class="typewriter-container">
+                <p class="hero-description">
+                    <span class="typing-text"></span>
+                    <span class="cursor">|</span>
+                </p>
+            </div>
+            <p class="hero-tagline">Motivated Computer Science Graduate | Seeking Entry-Level Opportunities in AI & Web Development</p>
+            
+            <div class="fresher-highlights">
+                <div class="highlight-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>B.Sc Computer Science (2022-2025)</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Ready to Contribute Immediately</span>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-brain"></i>
+                    <span>Eager to Learn & Grow</span>
+                </div>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/siva-sankar-v-2a24ab292?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="tooltip">LinkedIn</span>
+                </a>
+                <a href="https://github.com/sivasankar515" target="_blank" class="social-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span class="tooltip">GitHub</span>
+                </a>
+                <a href="https://wa.me/919944028425" target="_blank" class="social-icon whatsapp-link" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="tooltip">WhatsApp</span>
+                </a>
+                <a href="mailto:sivasankarvenkatesan5@gmail.com" class="social-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                    <span class="tooltip">Email</span>
+                </a>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-main">
+                    <i class="fas fa-eye"></i> View My Projects
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-comment"></i> Let's Connect
+                </a>
+                <a href="#resume" class="btn-secondary">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-img">
+            <div class="img-container">
+                <img src="siva.jpg" alt="Siva Sankar V" class="profile-img">
+                <div class="img-overlay"></div>
+                <div class="floating-elements">
+                    <div class="float-element element-1"><i class="fab fa-js"></i></div>
+                    <div class="float-element element-2"><i class="fab fa-python"></i></div>
+                    <div class="float-element element-3"><i class="fas fa-robot"></i></div>
+                    <div class="float-element element-4"><i class="fas fa-code"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01</span>
+                About <span class="title-highlight">Me</span>
+            </h2>
+            
+            <div class="about-intro">
+                <div class="intro-text glass-effect">
+                    <h3><i class="fas fa-handshake"></i> Welcome to My Portfolio</h3>
+                    <p>I'm a <strong>recent Computer Science graduate</strong> (B.Sc, 2025) with a strong foundation in AI, web development, and software engineering. As a fresher in the tech industry, I bring enthusiasm, up-to-date knowledge, and a strong desire to contribute to innovative projects. My academic journey has equipped me with both theoretical knowledge and practical skills through various projects and certifications.</p>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-card glass-effect">
+                    <div class="about-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education & Status</h3>
+                    <p><strong>B.Sc Computer Science (2022-2025)</strong><br>Sri Ramakrishna College of Arts and Science, Coimbatore</p>
+                    <p><strong>CGPA:</strong> 7.35/10.0</p>
+                    <p><strong>MCA (Pursuing) (2025-2027)</strong><br>Alagappa University, Karaikudi (Distance Education)</p>
+                    <div class="about-details">
+                        <p class="status-badge"><i class="fas fa-user-graduate"></i> <strong>Status:</strong> Recent Graduate | Pursuing MCA | Available Immediately</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Paramakudi, Tamil Nadu, India</p>
+                        <p><i class="fas fa-certificate"></i> London Trinity College Grade 1 Drummer</p>
+                    </div>
+                </div>
+                
+                <div class="about-card glass-effect">
+                    <div class="about-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Career Objective</h3>
+                    <p>Eager and motivated Computer Science graduate seeking an <strong>entry-level position</strong> to apply my skills in AI and web development. Passionate about creating innovative solutions and contributing to real-world projects while continuously learning and growing professionally. I aim to leverage my technical skills and fresh perspective to add value to your organization.</p>
+                    <div class="objective-points">
+                        <p><i class="fas fa-check-circle"></i> Seeking Entry-Level Opportunities</p>
+                        <p><i class="fas fa-check-circle"></i> Open to Internships & Full-time Roles</p>
+                        <p><i class="fas fa-check-circle"></i> Willing to Relocate if Required</p>
+                    </div>
+                </div>
+                
+                <div class="about-card glass-effect">
+                    <div class="about-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Why Hire a Fresher?</h3>
+                    <p>As a recent graduate, I offer unique advantages:</p>
+                    <ul class="advantages-list">
+                        <li><i class="fas fa-lightbulb"></i> <strong>Fresh Perspective:</strong> Up-to-date with latest technologies & methodologies</li>
+                        <li><i class="fas fa-bolt"></i> <strong>High Adaptability:</strong> Quick learner eager to embrace new challenges</li>
+                        <li><i class="fas fa-heart"></i> <strong>Enthusiasm:</strong> Passionate about technology and innovation</li>
+                        <li><i class="fas fa-code"></i> <strong>Modern Skills:</strong> Current academic knowledge with hands-on project experience</li>
+                        <li><i class="fas fa-users"></i> <strong>Team Player:</strong> Experience in collaborative projects and group work</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="graduate-traits">
+                <h3>Graduate Traits I Bring:</h3>
+                <div class="traits-grid">
+                    <div class="trait-item">
+                        <i class="fas fa-book"></i>
+                        <h4>Strong Foundation</h4>
+                        <p>Solid theoretical knowledge from recent education</p>
+                    </div>
+                    <div class="trait-item">
+                        <i class="fas fa-tools"></i>
+                        <h4>Practical Skills</h4>
+                        <p>Hands-on experience through academic projects</p>
+                    </div>
+                    <div class="trait-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Quick Learner</h4>
+                        <p>Ability to rapidly acquire new skills and technologies</p>
+                    </div>
+                    <div class="trait-item">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Career Focused</h4>
+                        <p>Clear goals and dedication to professional growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02</span>
+                Technical <span class="title-highlight">Skills</span>
+            </h2>
+            
+            <div class="skills-intro glass-effect">
+                <p><i class="fas fa-info-circle"></i> As a recent graduate, I've developed a comprehensive skill set through academic coursework, personal projects, and certifications. These skills represent my current technical capabilities and areas I'm eager to expand professionally.</p>
+            </div>
+            
+            <div class="skills-categories">
+                <div class="category">
+                    <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item glass-effect">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3><i class="fas fa-brain"></i> AI & Data Science</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item glass-effect">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fas fa-robot"></i>
+                            <span>Machine Learning</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Data Analysis</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 88%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h3><i class="fas fa-tools"></i> Other Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item glass-effect">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 82%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fas fa-code"></i>
+                            <span>C/C++</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                            <span class="skill-level-text">Advanced</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fas fa-network-wired"></i>
+                            <span>IoT</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+                            <span class="skill-level-text">Intermediate</span>
+                        </div>
+                        <div class="skill-item glass-effect">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Power BI</span>
+                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                           <span class="skill-level-text">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="learning-note">As a recent graduate, I'm committed to continuous learning and skill enhancement.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03</span>
+                Academic & Personal <span class="title-highlight">Projects</span>
+            </h2>
+            <div class="projects-conclusion glass-effect">
+                <h4><i class="fas fa-industry"></i> Family Business Integration</h4>
+                <p>The S.Naganath Timber website demonstrates my ability to create practical, business-oriented solutions. This project:</p>
+                <div class="outcomes-list">
+                    <p><i class="fas fa-check-circle"></i> <strong>Digital Transformation:</strong> Modernized a 30+ year traditional business</p>
+                    <p><i class="fas fa-check-circle"></i> <strong>Real Impact:</strong> Increased customer inquiries by 30%</p>
+                    <p><i class="fas fa-check-circle"></i> <strong>Technical Skills:</strong> Mobile-first design, e-commerce features, user engagement tools</p>
+                    <p><i class="fas fa-check-circle"></i> <strong>Content Management:</strong> Built-in content extraction for business data</p>
+                </div>
+            </div>
+            <div class="projects-intro glass-effect">
+                <p><i class="fas fa-project-diagram"></i> These projects demonstrate my ability to apply theoretical knowledge to practical solutions. Developed during my academic journey and personal learning, they showcase my problem-solving skills and technical capabilities as a recent graduate.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card glass-effect">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-assistive-listening-systems"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>Speech To Text Assistant</h3>
+                    <p><strong>Academic Project:</strong> An intelligent voice-controlled application developed with Python, featuring real-time speech recognition and command execution. This project helped differently-abled users and improved typing efficiency by 40%.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SpeechRecognition</span>
+                        <span class="tech-tag">PyAudio</span>
+                        <span class="tech-tag">AI/ML</span>
+                    </div>
+                    <div class="project-note">
+                        <i class="fas fa-university"></i> <strong>Academic Achievement:</strong> Demonstrated practical AI application
+                    </div>
+                </div>
+                
+                <div class="project-card glass-effect">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>Personal Portfolio Website</h3>
+                    <p><strong>Personal Project:</strong> A fully responsive portfolio website with modern animations, glass-morphism effects, and interactive elements. Features smooth scrolling, mobile-first design, and contact form integration. Demonstrates front-end development skills.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                    <div class="project-note">
+                        <i class="fas fa-code"></i> <strong>Skills Demonstrated:</strong> Modern web development techniques
+                    </div>
+                </div>
+
+                <div class="project-card glass-effect">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="naganth mobile.html" target="_blank" class="project-link" title="Live Business Website">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" onclick="downloadBusinessSite()" title="Download Business Website">
+                                <i class="fas fa-download"></i>
+                            </a>
+                            <a href="#" class="project-link" onclick="extractBusinessContent()" title="Extract Product Catalog">
+                                <i class="fas fa-file-export"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>S.Naganath Timber Business Website</h3>
+                    <p><strong>Client Project (Family Business):</strong> A fully responsive e-commerce website for a 30+ year old timber and clay tile business. Features include product catalog with image sliders, tile calculator, contact integration with WhatsApp/Google Maps, and mobile-optimized design.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Mobile-First</span>
+                        <span class="tech-tag">E-commerce</span>
+                        <span class="tech-tag">Product Catalog</span>
+                    </div>
+                    <div class="project-note">
+                        <i class="fas fa-chart-line"></i> <strong>Real-World Impact:</strong> 40+ products displayed, integrated contact forms increased inquiries by 30%
+                    </div>
+                </div>    
+                
+                <div class="project-card glass-effect">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="index1.html" target="_blank" class="project-link" title="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link" onclick="downloadProject('inventory_system.zip')" title="Download Project">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>S.Naganath Timber Inventory System</h3>
+                    <p><strong>Business Solution Project (2024):</strong> Developed a comprehensive inventory management system for family timber business established since 1990. Features real-time stock tracking, sales history, restocking alerts, CSV export, and detailed analytics dashboard.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Local Storage</span>
+                        <span class="tech-tag">Data Export</span>
+                    </div>
+                    <div class="project-note">
+                        <i class="fas fa-chart-line"></i> <strong>Real-World Application:</strong> Currently used in family timber business operations
+                    </div>
+                </div>    
+                
+                <div class="project-card glass-effect">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="gpr_jewellers/index.html" target="_blank" class="project-link" title="Live Website">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>GPR Jewellers E-commerce Website</h3>
+                    <p><strong>Full E-commerce Solution:</strong> Complete jewellery e-commerce website with admin panel, product management, gift collections, and price tracking. Features include multi-image product slideshows, drag & drop uploads, inventory management, and responsive design.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">LocalStorage</span>
+                        <span class="tech-tag">E-commerce</span>
+                    </div>
+                    <div class="project-note">
+                        <i class="fas fa-store"></i> <strong>Business Solution:</strong> Complete online store for relative's jewellery business
+                    </div>
+                </div>                   
+                
+                <div class="project-card glass-effect">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="sivasankar final documentation 16 march.pdf" target="_blank" class="project-link" title="View Project Report">
+                                <i class="fas fa-file-pdf"></i>
+                            </a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>Screenshot to Code: Automating UI Design Translation into Functional Code</h3>
+                    <p><strong>B.Sc Final Year Project (2025):</strong> An AI-powered tool that converts UI design screenshots into functional front-end code using machine learning and computer vision. The system automates the translation of static designs into HTML, CSS, and JavaScript, reducing manual effort and improving development efficiency.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Deep Learning</span>
+                    </div>
+                    <div class="project-note">
+                        <i class="fas fa-graduation-cap"></i> <strong>Academic Project:</strong> B.Sc Computer Science Final Year
+                    </div>
+                </div>
+            </div>
+           
+            <div class="projects-conclusion glass-effect">
+                <h4><i class="fas fa-lightbulb"></i> Project Learning Outcomes:</h4>
+                <div class="outcomes-list">
+                    <p><i class="fas fa-check-circle"></i> Developed problem-solving skills through hands-on implementation</p>
+                    <p><i class="fas fa-check-circle"></i> Gained experience in full project lifecycle from concept to deployment</p>
+                    <p><i class="fas fa-check-circle"></i> Learned to work with diverse technologies and frameworks</p>
+                    <p><i class="fas fa-check-circle"></i> Enhanced ability to document and present technical projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04</span>
+                My <span class="title-highlight">Resume</span>
+            </h2>
+            
+            <div class="resume-intro glass-effect">
+                <div class="resume-intro-content">
+                    <div class="resume-intro-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="resume-intro-text">
+                        <h3>Fresh Graduate Ready to Contribute</h3>
+                        <p>As a recent Computer Science graduate, I offer a combination of current academic knowledge and practical project experience. I'm seeking opportunities to apply my skills, learn from experienced professionals, and grow within a dynamic organization.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resume-container">
+                <div class="resume-card glass-effect">
+                    <div class="resume-header">
+                        <h3><i class="fas fa-user-graduate"></i> Education & Academic Profile</h3>
+                    </div>
+                    <div class="resume-item">
+                        <div class="resume-year">2022 - 2025</div>
+                        <h4>B.Sc Computer Science (Graduated)</h4>
+                        <p>Sri Ramakrishna College of Arts and Science, Coimbatore</p>
+                        <p class="resume-grade">CGPA: 7.35 / 10.0</p>
+                    </div>
+                    <div class="resume-item">
+                        <div class="resume-year">2025 - 2027</div>
+                        <h4>MCA (Pursuing)</h4>
+                        <p>Alagappa University, Karaikudi (Distance Education)</p>
+                    </div>
+                    <div class="resume-status">
+                        <i class="fas fa-certificate"></i> 
+                        <strong>Current Status:</strong> Pursuing MCA | Seeking Entry-Level Position
+                    </div>
+                    <div class="resume-item">
+                        <h4>Key Academic Achievements</h4>
+                        <ul class="achievements-list">
+                            <li>Completed comprehensive Computer Science curriculum</li>
+                            <li>Developed multiple practical projects across domains</li>
+                            <li>Participated in technical workshops and seminars</li>
+                            <li>Maintained consistent academic performance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="resume-card glass-effect">
+                    <div class="resume-header">
+                        <h3><i class="fas fa-certificate"></i> Certifications & Training</h3>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Data Visualization with IBM</h4>
+                        <p>Advanced data analysis and visualization techniques</p>
+                        <span class="cert-badge">Professional Certification</span>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Cyber Security - Tata Strive</h4>
+                        <p>Network security and threat management</p>
+                        <span class="cert-badge">Industry Training</span>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Unix - Infosys Springboard</h4>
+                        <p>Shell scripting and system administration</p>
+                        <span class="cert-badge">Technical Certification</span>
+                    </div>
+                    <div class="resume-item">
+                        <h4>London Trinity College</h4>
+                        <p>Grade 1 Drummer Certification</p>
+                        <span class="cert-badge">Extra-curricular Achievement</span>
+                    </div>
+                </div>
+                
+                <div class="resume-card glass-effect">
+                    <div class="resume-header">
+                        <h3><i class="fas fa-bullseye"></i> Career Objectives</h3>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Immediate Goals (0-2 Years)</h4>
+                        <ul class="goals-list">
+                            <li>Secure an entry-level position in AI/Web Development</li>
+                            <li>Apply academic knowledge to real-world projects</li>
+                            <li>Learn from experienced mentors and team members</li>
+                            <li>Contribute to team success and project completion</li>
+                        </ul>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Long-term Aspirations</h4>
+                        <ul class="goals-list">
+                            <li>Specialize in AI/ML development</li>
+                            <li>Contribute to innovative technology solutions</li>
+                            <li>Pursue advanced certifications and training</li>
+                            <li>Grow into leadership responsibilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resume-cta">
+                <a href="siva_sankar_v_resume_fresher.pdf" download class="btn-main">
+                    <i class="fas fa-download"></i> Download Full Resume
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-briefcase"></i> Discuss Opportunities
+                </a>
+                <a href="#projects" class="btn-secondary">
+                    <i class="fas fa-project-diagram"></i> View Project Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">05</span>
+                Why <span class="title-highlight">Hire a Fresher?</span>
+            </h2>
+            
+            <div class="faq-intro glass-effect">
+                <p><i class="fas fa-question-circle"></i> As a recent graduate entering the professional world, I understand you might have questions about hiring someone with limited industry experience. Here are some common questions and how my fresh perspective can benefit your organization:</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item glass-effect">
+                    <div class="faq-question">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Why should I hire a recent graduate?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>As a fresh Computer Science graduate, I bring <strong>current academic knowledge</strong>, enthusiasm for learning, and adaptability. I'm trained in the latest technologies and methodologies, ready to contribute fresh ideas and energy to your team. I don't have outdated practices to unlearn and can quickly adapt to your company's way of working.</p>
+                        <div class="faq-points">
+                            <p><i class="fas fa-check"></i> Up-to-date technical education</p>
+                            <p><i class="fas fa-check"></i> Eagerness to prove myself</p>
+                            <p><i class="fas fa-check"></i> Flexible and adaptable mindset</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-effect">
+                    <div class="faq-question">
+                        <i class="fas fa-rocket"></i>
+                        <h3>How quickly can a fresher become productive?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Based on my academic projects and learning speed, I can quickly understand your systems and start contributing. My portfolio demonstrates I can work independently on complex projects. With proper onboarding and mentorship, I expect to become productive within the first month and make meaningful contributions within 3 months.</p>
+                        <div class="faq-points">
+                            <p><i class="fas fa-check"></i> Fast learning capability demonstrated</p>
+                            <p><i class="fas fa-check"></i> Already built working projects independently</p>
+                            <p><i class="fas fa-check"></i> Strong problem-solving foundation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-effect">
+                    <div class="faq-question">
+                        <i class="fas fa-code"></i>
+                        <h3>What can a fresher actually deliver?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>My portfolio shows I can deliver complete, functional projects. I've built a Speech-to-Text Assistant, IoT systems, data dashboards, and this responsive portfolio website. I understand the complete development lifecycle and can handle tasks from requirements to deployment under guidance.</p>
+                        <div class="faq-points">
+                            <p><i class="fas fa-check"></i> Full-stack web development</p>
+                            <p><i class="fas fa-check"></i> AI/ML application development</p>
+                            <p><i class="fas fa-check"></i> Data analysis and visualization</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-effect">
+                    <div class="faq-question">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>What unique value does a fresher bring?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I bring a <strong>fresh perspective</strong> unburdened by "how things have always been done." My recent education means I'm familiar with the latest tools and approaches. I'm also highly coachable, enthusiastic, and motivated to make a positive impact from day one.</p>
+                        <div class="faq-points">
+                            <p><i class="fas fa-check"></i> Innovative problem-solving approaches</p>
+                            <p><i class="fas fa-check"></i> Knowledge of latest academic research</p>
+                            <p><i class="fas fa-check"></i> High energy and commitment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-effect">
+                    <div class="faq-question">
+                        <i class="fas fa-users"></i>
+                        <h3>How do freshers fit into team environments?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Throughout my academic journey, I've successfully collaborated on group projects, participated in technical workshops, and engaged in team-based learning. I understand the importance of communication, meeting deadlines, and contributing to shared goals. I'm eager to learn from experienced colleagues and contribute to team success.</p>
+                        <div class="faq-points">
+                            <p><i class="fas fa-check"></i> Experience in collaborative projects</p>
+                            <p><i class="fas fa-check"></i> Strong communication skills</p>
+                            <p><i class="fas fa-check"></i> Respectful of team dynamics</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass-effect">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>What about long-term potential?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hiring a fresher is an investment in future talent. I'm looking for a company where I can grow long-term. You'll have the opportunity to shape my professional development according to your organizational needs, creating a loyal employee who understands your systems from the ground up.</p>
+                        <div class="faq-points">
+                            <p><i class="fas fa-check"></i> Looking for long-term career growth</p>
+                            <p><i class="fas fa-check"></i> Willing to be trained in your specific processes</p>
+                            <p><i class="fas fa-check"></i> Committed to continuous learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fresher-advantages glass-effect">
+                <h3><i class="fas fa-trophy"></i> Advantages of Hiring a Fresher</h3>
+                <div class="advantages-grid">
+                    <div class="advantage-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Moldable</h4>
+                        <p>Can be trained in your specific methodologies and tools</p>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Energetic</h4>
+                        <p>Brings fresh energy and enthusiasm to the team</p>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-book"></i>
+                        <h4>Current Knowledge</h4>
+                        <p>Up-to-date with latest technologies and academic insights</p>
+                    </div>
+                    <div class="advantage-item">
+                        <i class="fas fa-heart"></i>
+                        <h4>Motivated</h4>
+                        <p>Eager to prove themselves and make meaningful contributions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">06</span>
+                Get In <span class="title-highlight">Touch</span>
+            </h2>
+            
+            <div class="contact-intro glass-effect">
+                <div class="contact-intro-content">
+                    <div class="contact-intro-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="contact-intro-text">
+                        <h3>Open to Opportunities</h3>
+                        <p>As a recent graduate, I'm actively seeking entry-level positions, internships, or project-based opportunities. I'm particularly interested in roles involving AI development, web development, or data analysis. I'm available to start immediately and willing to relocate if required.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-container">
+               <div class="contact-info">
+                    <div class="contact-card glass-effect">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p id="b-phone">Loading...</p>
+                        <a href="javascript:void(0)" onclick="makeCallDirect()" id="call-link" class="contact-link">Call Now</a>
+                        <div class="contact-note">
+                            <i class="fas fa-clock"></i> Available: 9 AM - 9 PM IST
+                        </div>
+                    </div>
+
+                    <div class="contact-card glass-effect">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p id="b-email">Loading...</p>
+                        <a href="javascript:void(0)" onclick="sendEmailDirect()" id="email-link" class="contact-link">Send Email</a>
+                        <div class="contact-note">
+                            <i class="fas fa-reply"></i> Response time: Within 24 hours
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card glass-effect">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location & Availability</h3>
+                        <p>Paramakudi, Tamil Nadu, India</p>
+                        <a href="https://maps.google.com/?q=Paramakudi+Tamil+Nadu" target="_blank" class="contact-link">View on Map</a>
+                        <div class="contact-note">
+                            <i class="fas fa-plane"></i> Willing to relocate for right opportunity
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card glass-effect">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Job Preferences</h3>
+                        <div class="preferences">
+                            <p><i class="fas fa-check"></i> Entry-level positions</p>
+                            <p><i class="fas fa-check"></i> Internships</p>
+                            <p><i class="fas fa-check"></i> Project-based work</p>
+                            <p><i class="fas fa-check"></i> Full-time roles</p>
+                        </div>
+                        <div class="contact-note">
+                            <i class="fas fa-calendar"></i> Available to start: Immediately
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form glass-effect" id="contact-form">
+                    <h3><i class="fas fa-comments"></i> Connect with a Recent Graduate</h3>
+                    <p class="form-subtitle">Interested in discussing opportunities? I'm eager to learn about roles where I can contribute and grow.</p>
+                    
+                    <div class="form-group">
+                        <input type="text" name="user_name" id="user_name" placeholder="Your Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="user_email" id="user_email" placeholder="Your Email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="user_subject" id="user_subject" placeholder="Subject (e.g., Job Opportunity, Internship)" required>
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="message" placeholder="Your Message (Please mention if you're looking for freshers/recent graduates)" rows="5" required></textarea>
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="fresher_acknowledge" name="fresher_acknowledge">
+                        <label for="fresher_acknowledge">I understand Siva is a recent graduate looking for entry-level opportunities</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-main btn-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                        <div class="btn-loading"></div>
+                    </button>
+                    <div class="form-message" id="form-message"></div>
+                    
+                    <div class="form-note">
+                        <i class="fas fa-info-circle"></i> As a fresher, I'm particularly interested in roles with training/mentorship opportunities.
+                    </div>
+                </form>
+            </div>
+            
+            <div class="contact-availability glass-effect">
+                <h4><i class="fas fa-calendar-check"></i> Availability for Interviews</h4>
+                <div class="availability-details">
+                    <p><i class="fas fa-video"></i> <strong>Available for:</strong> Video calls, Phone interviews, In-person meetings</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Location Flexibility:</strong> Willing to travel for interviews if required</p>
+                    <p><i class="fas fa-calendar-alt"></i> <strong>Notice Period:</strong> Available to start immediately (No notice period)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <h2 class="footer-logo">Siva<span>Sankar</span></h2>
+                <div class="fresher-badge">RECENT GRADUATE</div>
+                
+                <div class="footer-opportunities">
+                    <h3>Opportunities sought</h3>
+                    <div class="opportunities-list">
+                        <p><i class="fas fa-check"></i> Entry-Level Positions</p>
+                        <p><i class="fas fa-check"></i> Internships</p>
+                        <p><i class="fas fa-check"></i> Project-Based Work</p>
+                        <p><i class="fas fa-check"></i> Training Programs</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-connect">
+                <h3>Connect With Me</h3>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/siva-sankar-v-2a24ab292?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/sivasankar515" target="_blank" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/919944028425" target="_blank" class="social-icon whatsapp-link" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:sivasankarvenkatesan5@gmail.com" class="social-icon" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="footer-email">
+                    <i class="fas fa-envelope"></i> sivasankarvenkatesan5@gmail.com
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 Siva Sankar V. All rights reserved. | <strong>Recent Graduate</strong></p>
+            <p>Paramakudi, Tamil Nadu, India | Available for opportunities nationwide</p>
+        </div>
+    </div>
+</footer>
+
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script>
+  // Global error handler
+  window.addEventListener('error', function(e) {
+    console.error('Global error:', e.error);
+  });
+
+  // Handle offline/online status
+  window.addEventListener('offline', function() {
+    console.log('You are offline');
+    const offlineMsg = document.createElement('div');
+    offlineMsg.id = 'offline-message';
+    offlineMsg.innerHTML = '<i class="fas fa-wifi-slash"></i> You are offline. Some features may not work.';
+    offlineMsg.style.cssText = 'position:fixed;bottom:20px;right:20px;background:#ff6b6b;color:white;padding:10px 15px;border-radius:5px;z-index:9999;';
+    document.body.appendChild(offlineMsg);
+  });
+
+  window.addEventListener('online', function() {
+    console.log('You are online');
+    const offlineMsg = document.getElementById('offline-message');
+    if (offlineMsg) offlineMsg.remove();
+  });
+</script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="email-config.js"></script>
+    <script src="script.js"></script>
+  
+</body>
+</html>
